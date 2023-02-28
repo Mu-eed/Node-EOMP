@@ -14,6 +14,8 @@ const app = express();
 
 const route = express.Router();
 
+const jwt = require('jsonwebtoken');
+
 const { errorHandling } = require('./middleware/ErrorHandling');
 
 const cookieParser = require('cookie-parser');
