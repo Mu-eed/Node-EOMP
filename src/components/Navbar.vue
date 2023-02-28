@@ -1,6 +1,90 @@
-<template>
-    <!--Main Navigation-->
+<!-- <template>
+   
 <header>
+  <nav class="navbar navbar-expand-lg bg-transparent">
+  <div class="container-fluid">
+    <router-link to="/" class="navbar-brand" >
+      <img alt="Vue logo" src="https://i.postimg.cc/xC5N8bQw/In-Shot-20230228-135454580-fococlipping-standard.png" style="max-width: 8rem;">
+    </router-link>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <router-link to="/">
+            <i class="fa fa-home fa-fw me-3"></i> Home</router-link>
+          </li>
+        <li class="nav-item">
+          <router-link to="/admin">
+            <i class="fa fa-user fa-fw me-3"></i> Admin</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/products">
+            <i class="fa fa-list fa-fw me-3"></i>Products</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/contact">
+            <i class="fa fa-phone fa-fw me-3"></i> Contact Us</router-link>
+          </li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+</header>
+</template>
+
+<script>
+export default {
+    
+}
+</script>
+
+<style scoped>
+#nav-bar
+{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.navbar-brand img
+{
+    height: 60px;
+    width: auto;
+    padding-left: 30px;
+}
+.navbar-nav li
+{
+    padding: 0 10px;
+}
+.navbar-nav li a
+{
+    float: right;
+    text-align: left;
+}
+#nav-bar ul li a:hover
+{
+    color: #747c85!important;
+}
+.navbar
+{
+    background: #fff;
+}
+.navbar-toggler
+{
+    border: none!important;
+}
+.nav-link
+{
+    color: #555!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+   
+</style> -->
+
+<template lang="">
+  <header>
   <!-- Sidebar -->
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-transparent">
     <div class="position-sticky">
@@ -8,37 +92,12 @@
         <router-link class="list-group-item list-group-item-action py-2 ripple" 
         to="/"> <span><i class="fa fa-home fa-fw me-3"></i>Home</span> </router-link>
         <router-link class="list-group-item list-group-item-action py-2 ripple" 
-        to="/admin"> <span><i class="fa fa-laptop fa-fw me-3"></i>Admin</span> </router-link>
+        to="/admin"> <span><i class="fa fa-info fa-fw me-3"></i>Admin</span> </router-link>
         <router-link class="list-group-item list-group-item-action py-2 ripple" 
-        to="/products">Products</router-link>
+        to="/products"><span><i class="fa fa-list fa-fw me-3"></i>Products</span></router-link>
         <router-link class="list-group-item list-group-item-action py-2 ripple" 
-        to="/contact">Contact Us</router-link>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
-          <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-lock fa-fw me-3"></i><span>Password</span></a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span></a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-          <i class="fas fa-chart-pie fa-fw me-3"></i><span>SEO</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-globe fa-fw me-3"></i><span>International</span></a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-building fa-fw me-3"></i><span>Partners</span></a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span></a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-users fa-fw me-3"></i><span>Users</span></a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a>
-      </div>
+        to="/contact"><span><i class="fa fa-phone fa-fw me-3"></i>Contact Us</span></router-link>
+        </div>
     </div>
   </nav>
   <!-- Sidebar -->
@@ -54,38 +113,14 @@
       </button>
 
       <!-- Logo -->
-      <a class="navbar-brand" href="#">
-        <img src="https://i.postimg.cc/KzZzZGjs/THE-GAMES-YOU-fococlipping-standard.png" width="100" alt="Logo"
-          loading="lazy" />
-      </a>
-      <!-- Search form -->
-      <form class="d-none d-md-flex input-group w-auto my-auto">
-        <input autocomplete="off" type="search" class="form-control rounded"
-          placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px;" />
-        <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
-      </form>
+      <router-link to="/" class="navbar-brand" >
+      <img alt="Vue logo" src="https://i.postimg.cc/xC5N8bQw/In-Shot-20230228-135454580-fococlipping-standard.png" style="max-width: 8rem;">
+    </router-link>
 
       <!-- Right links -->
       <ul class="navbar-nav ms-auto d-flex flex-row">
         <!-- Notification dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-bell"></i>
-            <span class="badge rounded-pill badge-notification bg-danger">1</span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-            <li>
-                <router-link to="">Login</router-link>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Another news</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </li>
-          </ul>
-        </li>
+        
 
         <!-- Icon -->
         <li class="nav-item">
@@ -125,29 +160,19 @@
   </nav>
   <!-- Navbar -->
 </header>
-<!--Main Navigation-->
-
-<!--Main layout-->
-<main style="margin-top: 58px;">
-  <div class="container pt-4"></div>
-</main>
-<!--Main layout-->
 </template>
-
 <script>
 export default {
-    
+  
 }
 </script>
-
 <style scoped>
-   
+    
 @media (min-width: 991.98px) {
 main {
 padding-left: 240px;
 }
 }
-
 /* Sidebar */
 .sidebar {
 position: fixed;
@@ -157,9 +182,7 @@ left: 0;
 padding: 58px 0 0; /* Height of navbar */
 box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
 width: 240px;
-z-index: 600;
 }
-
 @media (max-width: 991.98px) {
 .sidebar {
 width: 100%;
@@ -169,7 +192,6 @@ width: 100%;
 border-radius: 5px;
 box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
-
 .sidebar-sticky {
 position: relative;
 top: 0;

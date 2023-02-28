@@ -1,6 +1,6 @@
 <template>
   <div class="container" style="max-width: fit-content;">
-    <img alt="Vue logo" src="https://i.postimg.cc/DywYsj5N/THE-GAMES-YOU-gif-unscreen.gif" style="max-width: 100%;"><br>
+    <img alt="Vue logo" src="https://i.postimg.cc/xC5N8bQw/In-Shot-20230228-135454580-fococlipping-standard.png" style="max-width: 100%;"><br>
     <button class="bbtn btn">Browse Games</button>
   </div>
 </template>
