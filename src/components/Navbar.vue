@@ -103,11 +103,11 @@ export default {
   <!-- Sidebar -->
 
   <!-- Navbar -->
-  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top na">
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Toggle button -->
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#thetarget" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+      <button class="navbar-toggler navbtn" data-toggle="collapse" data-target="#thetarget" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
         aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -120,37 +120,26 @@ export default {
       <!-- Right links -->
       <ul class="navbar-nav ms-auto d-flex flex-row">
         <!-- Notification dropdown -->
-        
-
-        <!-- Icon -->
-        <li class="nav-item">
-          <a class="nav-link me-3 me-lg-0" href="#">
-            <i class="fas fa-users fa-fw me-3"></i>
-          </a>
-        </li>
-        <!-- Icon -->
-        <li class="nav-item me-3 me-lg-0">
-          <a class="nav-link" href="#">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
+      
 
         <!-- Avatar -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
             id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle"
+            <img src="https://i.postimg.cc/T3d6R0wV/png-clipart-frost-pro-for-os-x-icon-set-now-free-contacts-male-profile.png" class="rounded-circle"
               height="22" alt="Avatar" loading="lazy" />
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
             <li>
-              <a class="dropdown-item" href="#">My profile</a>
+              <router-link to="/register" class="dropdown-item">Register</router-link>
             </li>
             <li>
-              <a class="dropdown-item" href="#">Settings</a>
+              <router-link to="/login" class="dropdown-item" >login</router-link>
+              
             </li>
             <li>
-              <a class="dropdown-item" href="#">Logout</a>
+              <router-link to="/" class="dropdown-item">Logout</router-link>
+              
             </li>
           </ul>
         </li>
@@ -167,6 +156,12 @@ export default {
 }
 </script>
 <style scoped>
+
+.navbtn{
+  color: white;
+}
+
+
     
 @media (min-width: 991.98px) {
 main {
@@ -175,14 +170,14 @@ padding-left: 240px;
 }
 /* Sidebar */
 .sidebar {
-position: fixed;
 top: 0;
 bottom: 0;
 left: 0;
-padding: 58px 0 0; /* Height of navbar */
+padding: 58px 0 0; 
 box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
 width: 240px;
 }
+
 @media (max-width: 991.98px) {
 .sidebar {
 width: 100%;
@@ -193,11 +188,11 @@ border-radius: 5px;
 box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 .sidebar-sticky {
-position: relative;
+/* position: relative; */
 top: 0;
 height: calc(100vh - 48px);
 padding-top: 0.5rem;
-overflow-x: hidden;
-overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+/* overflow-x: hidden; */
+/* overflow-y: auto; */
 }
 </style>

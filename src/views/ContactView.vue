@@ -107,11 +107,15 @@ textarea {
 .wrapper > * {
   padding: 1em;
 }
-@media (min-width: 700px) {
-  .wrapper {
+.wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    /* grid-template-columns: 2fr 1fr; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
   }
+@media (min-width: 700px) {
+  
   .wrapper > * {
     padding: 2em 2em;
   }
