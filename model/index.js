@@ -76,7 +76,50 @@ class User{
             emailAdd: detail.emailAdd,
             userPass: detail.userPass
         }
-        
+        const strQry =
+        `INSERT INTO Users
+        SET ?;`;
+        db.query(strQry, [detail], (err)=>{
+            if(err) {
+                res.status(401).json({err});
+            }else{
+                const jwToken = createToken(user);
+                res.cookie("LegitUser", jwToken, {
+                    maxAge: 3600000,
+                    httpOnly: true
+                });
+                res.status(200).json({msg: "A user record was saved."})
+            }
+        })
+    }
+    updateUser(req, res){
+        let data = req.body;
+        if(data.userPass !== null ||
+            data.userPass !== undefined)
+            data.userPass = hashSync(data.userPass, 15);
+        const strQry = 
+        `
+        UPDATE Users
+        SET ?
+        WHERE userID = ?;
+        `;
+        db.query(strQry, [data, req.params.id],
+            (err)=>{
+                if(err) throw err;
+                res.status(200).json( { msg: "A row was affected"})
+            })
+    }
+    deleteUser(req, res){
+        const strQry = 
+        `
+        DELETE FROM Users
+        WHERE userID = ?;
+        `;
+        db.query(strQry, [req.params.id],
+            (err)=>{
+                if(err) throw err;
+                res.status(200).json( {msg: "A record was removed from a database"})
+            })
     }
 }
 
