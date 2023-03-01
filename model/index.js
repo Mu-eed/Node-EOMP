@@ -123,3 +123,73 @@ class User{
     }
 }
 
+class Product {
+    fetchProducts(req, res){
+        const strQry = 
+        `
+        SELECT id, prodName, prodDescription, category, price, prodQuantity, imgURL
+        FROM Products;
+        `;
+        db.query(strQry, (err, results)=>{
+            if(err) throw err;
+            res.status(200).json({results: results})
+        });
+    }
+    fetchProduct(req, res) {
+        const strQry = 
+        `
+        SELECT id, prodName, prodDescription, category, price, prodQuantity, imgURL
+        FROM Products
+        WHERE id = ?;
+        `;
+        db.query(strQry, [req.params.id], (err, results)=>{
+            if(err) throw err;
+            res.status(200).json({results: results})
+        });
+    }
+    addProduct(req, res) {
+        
+        const strQry = 
+        `
+        INSERT INTO Products
+        SET ?;
+        `;
+        db.query(strQry, [req.body],
+            (err)=>{
+                if(err){
+                    res.status(400).json({err: "Unable to insert a new record."});
+                }else{
+                    res.status(200).json({msg: "Product saved"})
+                }
+            });
+    }     
+    updateProduct(req, res){
+        const strQry = 
+        `
+        UPDATE Products
+        SET ?
+        WHERE id = ?;
+        `;
+        db.query(strQry, [req.body, req.params.id],
+            (err)=>{
+                if(err){
+                    res.status(400).json({err: "Unable to update a record."});
+                }else{
+                    res.status(200).json({msg: "Product updated"});
+                }
+            });
+    }
+    deleteProduct(req, res){
+        const strQry = 
+        `
+        DELETE FROM Products
+        WHERE id = ?;
+        `;
+        db.query(strQry, [req.params.id], (err)=>{
+            if(err) res.status(400).json({err: "The record was not found."});
+            res.status(200).json({msg: "A product was deleted successfully"});
+        })
+    }
+}
+
+module.exports = {User, Product};

@@ -3,8 +3,9 @@ const express = require('express');
 const path = require('path');
 
 const cors = require('cors');
+const route = require('./controller');
 
-const port = parseInt(process.env.PORT)  || 8080;
+const port = parseInt(process.env.PORT)  || 4000;
 
 const db = require('./config');
 
@@ -12,13 +13,12 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const route = express.Router();
-
 const jwt = require('jsonwebtoken');
 
 const { errorHandling } = require('./middleware/ErrorHandling');
 
 const cookieParser = require('cookie-parser');
+
 
 app.use((req, res, next)=> {
     res.header('Access-Control-Allow-Origin', 'http://localhost:8080')
@@ -28,7 +28,7 @@ app.use((req, res, next)=> {
     next();
 });
 app.use(route);
-    app.use(
+app.use(
     cors(),
     cookieParser(),
     express.json,
@@ -39,7 +39,7 @@ route.get('/', (req, res)=>{
     res.status(200).sendFile(path.join(__dirname, './view/index.html'));
 })
 
-app.listen(8080, ()=>{
+app.listen(port, ()=>{
     console.log(`Server is running...`)
 });
 
