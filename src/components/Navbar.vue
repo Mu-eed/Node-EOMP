@@ -87,8 +87,8 @@ export default {
   <header>
   <!-- Sidebar -->
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-transparent">
-    <div class="position-sticky">
-      <div class="list-group list-group-flush mx-3 mt-4" style="margin-top: 50%;">
+    <div class="sideList">
+      <div class="list-group list-group-flush mx-3 mt-4 " style="margin-top: 50%;">
         <router-link class="list-group-item list-group-item-action py-2 ripple" 
         to="/"> <span><i class="fa fa-home fa-fw me-3"></i>Home</span> </router-link>
         <router-link class="list-group-item list-group-item-action py-2 ripple" 
@@ -177,6 +177,7 @@ padding: 58px 0 0;
 box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
 width: 240px;
 }
+
 
 @media (max-width: 991.98px) {
 .sidebar {

@@ -17,9 +17,8 @@ export default {
 </script>
 
 <style scoped>
-:root {
-    --gradient: linear-gradient(to bottom right,rgb(54, 11, 36), rgb(195, 26, 119)) !important;
-  }.bbtn {
+
+.bbtn {
     box-shadow: white 1px 0 10px;
     border: 4px solid  rgb(43, 6, 27);
     padding: 1px;

@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <div>
         <p>Updating products</p>
     </div>
