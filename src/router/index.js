@@ -6,8 +6,6 @@ import SingleProductView from '../views/SingleProductView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import LoginView from '../views/LoginView.vue'
 import ContactView from '../views/ContactView.vue'
-import ForgotView from '../views/ForgotView.vue'
-
 const routes = [
   {
     path: '/',
@@ -34,10 +32,6 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView},
-  {
-    path: '/forgot',
-    name: 'forgot',
-    component: ForgotView},
   {
     path: '/contact',
     name: 'contact',

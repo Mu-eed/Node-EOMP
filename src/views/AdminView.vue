@@ -1,16 +1,19 @@
 <template>
     <h1>Admin Page</h1>
-    <div class="container">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-6">
-						
-					</div>
-                </div>
+    <div class="container" >
+       
+            <div class="table-title">     
+				<h1>Users</h1>           
             </div>
-            <h1>Users</h1>
-            <table class="table table-striped table-hover">
+            
+
+			
+  <table class="table">
+    ...
+  </table>
+
+<div class="table-responsive-sm">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -34,14 +37,14 @@
                     </tr>
                 </tbody>
             </table>
-
+</div>
             <br>
             <br>
 
             <h1>Products</h1>
-            <table class="table table-striped table-hover">
+            <table  class="table table-responsive">
                 <thead>
-                    <tr>
+                    <tr >
                         <th scope="col">#</th>
                         <th scope="col">image</th>
                         <th scope="col">Name</th>
@@ -53,7 +56,7 @@
                     <tr v-for="item in products" :key="item">
                         <th scoped="row">{{ item.id }}</th>
                         <td><figure>
-                            <img :src="item.imgURL" alt="" style="width: 40px;">
+                            <img :src="item.imgURL" alt="" style="max-width: 40px;">
                         </figure></td>
                         <td>{{ item.prodName }}</td>
                         <td>{{ item.price }}</td>
@@ -66,7 +69,7 @@
                 </tbody>
             </table>
         </div>
-    </div>
+
 
     <AddProduct/>
     <UpdateProduct/>
@@ -91,6 +94,33 @@ export default {
     components: { AddProduct, UpdateProduct }
 }
 
+// Add button
+
+// function addItem(){
+//         let name =  document.querySelector('#addName').value;
+//         let price = document.querySelector('#addPrice').value;
+//         let style = document.querySelector('#addcategory').value;
+//         let image = document.querySelector('#addImage').value;
+    
+//         catalogue.push({
+//             name,
+//             price,
+//             category,
+//             image
+//         })
+//         localStorage.setItem('catalogue', JSON.stringify(catalogue));  
+// }
+
+
+// delete button
+
+// function del(id) {
+    
+//    products.splice(products.findIndex(item=>item.id==id),1)
+//     localStorage.setItem('catalogue',JSON.stringify(products));
+//     location.reload()
+// }
+
 </script>
 <style scoped>
     .container{
@@ -98,13 +128,6 @@ export default {
         color: whitesmoke;
     }
 
-    .table-wrapper {
-        background: #fff;
-        padding: 20px 25px;
-        margin: 30px 0;
-		border-radius: 3px;
-        box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    }
 	.table-title {        
 		padding-bottom: 15px;
 		background: #435d7d;
@@ -117,29 +140,6 @@ export default {
 		margin: 5px 0 0;
 		font-size: 24px;
 	}
-	.table-title .btn-group {
-		float: right;
-	}
-	.table-title .btn {
-		color: #fff;
-		float: right;
-		font-size: 13px;
-		border: none;
-		min-width: 50px;
-		border-radius: 2px;
-		border: none;
-		outline: none !important;
-		margin-left: 10px;
-	}
-	.table-title .btn i {
-		float: left;
-		font-size: 21px;
-		margin-right: 5px;
-	}
-	.table-title .btn span {
-		float: left;
-		margin-top: 2px;
-	}
     table.table tr th, table.table tr td {
         border-color: #e9e9e9;
 		padding: 12px 15px;
@@ -151,12 +151,7 @@ export default {
 	table.table tr th:last-child {
 		width: 100px;
 	}
-    table.table-striped tbody tr:nth-of-type(odd) {
-    	background-color: #fcfcfc;
-	}
-	table.table-striped.table-hover tbody tr:hover {
-		background: #f5f5f5;
-	}
+   
     table.table th i {
         font-size: 13px;
         margin: 0 5px;
@@ -186,129 +181,5 @@ export default {
     table.table td i {
         font-size: 19px;
     }
-	table.table .avatar {
-		border-radius: 50%;
-		vertical-align: middle;
-		margin-right: 10px;
-	}
-    .pagination {
-        float: right;
-        margin: 0 0 5px;
-    }
-    .pagination li a {
-        border: none;
-        font-size: 13px;
-        min-width: 30px;
-        min-height: 30px;
-        color: #999;
-        margin: 0 2px;
-        line-height: 30px;
-        border-radius: 2px !important;
-        text-align: center;
-        padding: 0 6px;
-    }
-    .pagination li a:hover {
-        color: #666;
-    }	
-    .pagination li.active a, .pagination li.active a.page-link {
-        background: #fff;
-    }
-    .pagination li.active a:hover {        
-        background: #fff;
-    }
-	.pagination li.disabled i {
-        color: #ccc;
-    }
-    .pagination li i {
-        font-size: 16px;
-        padding-top: 6px
-    }
-    .hint-text {
-        float: left;
-        margin-top: 10px;
-        font-size: 13px;
-    }    
-	/* Custom checkbox */
-	.custom-checkbox {
-		position: relative;
-	}
-	.custom-checkbox input[type="checkbox"] {    
-		opacity: 0;
-		position: absolute;
-		margin: 5px 0 0 3px;
-		z-index: 9;
-	}
-	.custom-checkbox label:before{
-		width: 18px;
-		height: 18px;
-	}
-	.custom-checkbox label:before {
-		content: '';
-		margin-right: 10px;
-		display: inline-block;
-		vertical-align: text-top;
-		background: white;
-		border: 1px solid #bbb;
-		border-radius: 2px;
-		box-sizing: border-box;
-		z-index: 2;
-	}
-	.custom-checkbox input[type="checkbox"]:checked + label:after {
-		content: '';
-		position: absolute;
-		left: 6px;
-		top: 3px;
-		width: 6px;
-		height: 11px;
-		border: solid #000;
-		border-width: 0 3px 3px 0;
-		transform: inherit;
-		z-index: 3;
-		transform: rotateZ(45deg);
-	}
-	.custom-checkbox input[type="checkbox"]:checked + label:before {
-		border-color: #fff;
-		background: #fff;
-	}
-	.custom-checkbox input[type="checkbox"]:checked + label:after {
-		border-color: #fff;
-	}
-	.custom-checkbox input[type="checkbox"]:disabled + label:before {
-		color: #b8b8b8;
-		cursor: auto;
-		box-shadow: none;
-		background: #ddd;
-	}
-	/* Modal styles */
-	.modal .modal-dialog {
-		max-width: 400px;
-	}
-	.modal .modal-header, .modal .modal-body, .modal .modal-footer {
-		padding: 20px 30px;
-	}
-	.modal .modal-content {
-		border-radius: 3px;
-	}
-	.modal .modal-footer {
-		background: #ecf0f1;
-		border-radius: 0 0 3px 3px;
-	}
-    .modal .modal-title {
-        display: inline-block;
-    }
-	.modal .form-control {
-		border-radius: 2px;
-		box-shadow: none;
-		border-color: #dddddd;
-	}
-	.modal textarea.form-control {
-		resize: vertical;
-	}
-	.modal .btn {
-		border-radius: 2px;
-		min-width: 100px;
-	}	
-	.modal form label {
-		font-weight: normal;
-	}
+	
 </style>
