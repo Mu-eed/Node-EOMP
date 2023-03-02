@@ -18,6 +18,15 @@ export default createStore({
     },
     setMessage(state, value){
       state.message = value
+    },
+    setProducts(state, values){
+      state.products = values
+    },
+    setMessage(state, values){
+      state.message = values
+    },
+    setSpinner(state,value){
+      state.showSpinner = value
     }
   },
   actions: {
