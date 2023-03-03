@@ -18,7 +18,7 @@
                     <tr>
                         <th>#</th>
                         <th>First Name</th>
-                        <th>Surname</th>
+                        <th>Last Name</th>
 						<th>Email</th>
                     </tr>
                 </thead>
@@ -27,9 +27,9 @@
 						<td>
 						</td>
                         <td>{{ user.id }}</td>
-                        <td>  {{ user.first }}</td>
-                        <td>{{ user.surname }}</td>
-                        <td>{{ user.email }}</td>
+                        <td>  {{ user.firstName }}</td>
+                        <td>{{ user.lastName }}</td>
+                        <td>{{ user.emailAdd }}</td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -68,6 +68,14 @@
                     </tr>
                 </tbody>
             </table>
+
+            <button
+     id="addBtn"
+      class="btn btn-secondary btn-lg" 
+      style="background-color: rgb(0, 0, 0); color: black;" 
+      type="button" data-bs-toggle="modal" data-bs-target="#modalForm"
+      >Add Product
+    </button>
         </div>
 
 
@@ -126,6 +134,10 @@ export default {
     .container{
         margin-top: 3rem;
         color: whitesmoke;
+    }
+
+    .table{
+        background-color: rgb(255, 255, 255, 0.7);
     }
 
 	.table-title {        

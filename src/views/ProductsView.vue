@@ -1,6 +1,6 @@
 <template>
     <div class="min-vh-100 main">
-        <div>Hi</div>
+        
 
         <!-- Filter Section -->
         <select name="filter" id="filter" style="display:flex;">
@@ -15,15 +15,17 @@
 
      <!-- Displaying Products -->
      <div class="displaying">
-      <div class="row">
-        <div class="card col-3 .col-xl-3 games" v-for="item in products" :key="item" style="width: 18rem;">
+      <SpinnerC v-if="isLoading"/>
+      <div v-else>
+        <div class="row">
+         <div class="card col-3 .col-xl-3 games" v-for="item in products" :key="item" style="width: 18rem;">
          <img :src="item.imgURL" class="card-img-top" alt="...">
           <div class="card-body">
           <h5 class="card-title">{{ item.prodName }}</h5>
           </div>
          <ul class="list-group list-group-flush">
             <li class="list-group-item">{{ item.category }}</li>
-            <li class="list-group-item">{{ item.price }}</li>
+            <li class="list-group-item">R{{ item.price }}</li>
             <li>
               <button>
                 <router-link to="/singleprod" class="card-link">View Details</router-link>
@@ -32,6 +34,8 @@
           </ul>
         </div>
       </div>
+      </div>
+      
      </div>
      
     </div>
@@ -39,6 +43,7 @@
 <script>
 import { useStore } from 'vuex';
 import {computed} from '@vue/runtime-core';
+import SpinnerC from '../components/Spinner.vue'
 
 export default {
   setup(){
@@ -50,7 +55,19 @@ export default {
             products
         }
     },
-    components: {  }
+    components: { 
+      SpinnerC
+     },
+     data(){
+      return {
+        isLoading: true,
+      }
+     },
+     created(){
+      setTimeout(()=> {
+        this.isLoading = false;
+      },2000);
+     }
 }
 
 
@@ -87,7 +104,7 @@ export default {
 //     if(e.target.value == 'all') {
 //         display();
 //     }
-    // console.log(filteredCards);
+// console.log(filteredCards);
 // })
 
 </script>

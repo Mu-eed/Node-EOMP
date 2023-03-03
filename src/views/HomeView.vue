@@ -1,7 +1,8 @@
 <template>
   <div class="container min-vh-100">
     <img alt="Vue logo" src="https://i.postimg.cc/xC5N8bQw/In-Shot-20230228-135454580-fococlipping-standard.png" style="max-width: 100%;"><br>
-    <button class="bbtn btn">Browse Games</button>
+    <button class="bbtn btn">
+      <router-link to="/products" class="bbtn btn">Browse Games</router-link></button>
 
     <h4>
       We offer the latest games for PS4, PS5 or PCs for sale.

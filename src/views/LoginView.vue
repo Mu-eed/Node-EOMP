@@ -148,10 +148,6 @@ h1,
       align-self: end;
       width: auto;
     }
-    .contact {
-      padding: 0 0 0 10px;
-      width: auto;
-    }
     input[type="submit"] {
       grid-column: 2;
     }
@@ -170,7 +166,7 @@ h1 {
 }
 
 .login {
-  background-color: rgba(191, 216, 227, .4);
+  background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(245, 204, 204, 0.8);
   border-radius: 5px;
   padding: 10px;
