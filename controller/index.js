@@ -51,7 +51,7 @@ route.post('/product', bodyParser.json(), (req, res)=>{
 })
 
 route.put('/product/:id', bodyParser.json(), (req, res)=>{
-    product,updateProduct(req, res);
+    product.updateProduct(req, res);
 })
 
 route.delete('/product/:id', (req, res)=>{
