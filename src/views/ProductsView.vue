@@ -18,7 +18,7 @@
       <SpinnerC v-if="isLoading"/>
       <div v-else>
         <div class="row">
-         <div class="card col-3 .col-xl-3 games" v-for="item in products" :key="item" style="width: 18rem;">
+         <div class="card col-lg-4 games" v-for="item in products" :key="item" style="width: 18rem;">
          <img :src="item.imgURL" class="card-img-top" alt="...">
           <div class="card-body">
           <h5 class="card-title">{{ item.prodName }}</h5>

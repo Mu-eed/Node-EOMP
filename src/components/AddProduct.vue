@@ -12,11 +12,11 @@
             <form v-for="item in products" :key="item">
              <div>
                  <label for="inputname"  > Name of Product</label>
-                 <input type="text" id="addName" v-model="payload.prodName">
+                 <input type="text" id="addName" v-model="payloadTemplate.prodName">
              </div>
              <div>
                  <label for="inputprice"> Price of Product</label>
-                 <input type="number" id="addPrice" v-model="payload.price" >
+                 <input type="number" id="addPrice" v-model="payloadTemplate.price" >
              </div>
              <div>
                  <label for="inputStyle"> Add the Category</label>
@@ -57,6 +57,7 @@ export default {
             prodDescription:'',
             category:'',
             price:'',
+            prodQuantity: '',
             imgURL:'',
             userID:'',
         }

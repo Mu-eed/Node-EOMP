@@ -2,14 +2,11 @@
     <h1>Admin Page</h1>
     <div class="container" >
        
-            <div class="table-title">     
-				<h1>Users</h1>           
-            </div>
             
 
 			
   <table class="table">
-    ...
+    
   </table>
 
 <div class="table-responsive-sm">
@@ -101,33 +98,6 @@ export default {
     },
     components: { AddProduct, UpdateProduct }
 }
-
-// Add button
-
-// function addItem(){
-//         let name =  document.querySelector('#addName').value;
-//         let price = document.querySelector('#addPrice').value;
-//         let style = document.querySelector('#addcategory').value;
-//         let image = document.querySelector('#addImage').value;
-    
-//         catalogue.push({
-//             name,
-//             price,
-//             category,
-//             image
-//         })
-//         localStorage.setItem('catalogue', JSON.stringify(catalogue));  
-// }
-
-
-// delete button
-
-// function del(id) {
-    
-//    products.splice(products.findIndex(item=>item.id==id),1)
-//     localStorage.setItem('catalogue',JSON.stringify(products));
-//     location.reload()
-// }
 
 </script>
 <style scoped>

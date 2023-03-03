@@ -10,9 +10,14 @@
                         <form class="requires-validation" novalidate>
 
                             <div class="col-md-12">
-                               <input class="form-control" type="text" name="name" placeholder="Full Name" required>
-                               <div class="valid-feedback">Username field is valid!</div>
-                               <div class="invalid-feedback">Username field cannot be blank!</div>
+                               <input class="form-control" type="text" name="name" placeholder="First Name" required>
+                               <div class="valid-feedback">First Name field is valid!</div>
+                               <div class="invalid-feedback">First Name field cannot be blank!</div>
+                            </div>
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="lastname" placeholder="Last Name" required>
+                               <div class="valid-feedback">Last Name field is valid!</div>
+                               <div class="invalid-feedback">Last Name field cannot be blank!</div>
                             </div>
 
                             <div class="col-md-12">
@@ -20,13 +25,17 @@
                                  <div class="valid-feedback">Email field is valid!</div>
                                  <div class="invalid-feedback">Email field cannot be blank!</div>
                             </div>
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" name="cell" placeholder="Cell Number" required>
+                                 <div class="valid-feedback">Cell Number is valid!</div>
+                                 <div class="invalid-feedback">Cell number field cannot be blank!</div>
+                            </div>
 
                            <div class="col-md-12">
                               <input class="form-control" type="password" name="password" placeholder="Password" required>
                                <div class="valid-feedback">Password field is valid!</div>
                                <div class="invalid-feedback">Password field cannot be blank!</div>
                            </div>
-
 
                            <div class="col-md-12 mt-3">
                             <label class="mb-3 mr-1" for="gender">Gender: </label>
@@ -89,11 +98,9 @@ export default {
     padding: 40px;
     display: inline-block;
     width: 100%;
-    min-width: 540px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     text-align: left;
-    transition: all 0.4s ease;
 }
 
 .form-content h3 {
@@ -115,7 +122,7 @@ export default {
 }
 
 
-.form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
+.form-content label, .was-validated .form-check-input:valid~.form-check-label{
     color: #fff;
 }
 
@@ -129,7 +136,7 @@ export default {
     background-color: #fff;
     font-size: 15px;
     font-weight: 300;
-    color: #8D8D8D;
+    color: #050505;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     margin-top: 16px;
@@ -137,14 +144,15 @@ export default {
 
 
 .btn-primary{
-    background-color: #6C757D;
+    background-color: #000000;
     outline: none;
     border: 0px;
      box-shadow: none;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
-    background-color: #495056;
+    background-color: #ffffff;
+    color: #000000 !important;
     outline: none !important;
     border: none !important;
      box-shadow: none;
@@ -180,11 +188,4 @@ export default {
     margin-bottom: 8px !important;
 }
 
-.invalid-feedback{
-    color: #b33b45;
-}
-
-.valid-feedback{
-   color: #3fd38e;
-}
 </style>

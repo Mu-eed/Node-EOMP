@@ -69,6 +69,18 @@ export default {
 </script>
 <style scoped>
 
+.navbtn{
+  color: #ffffff;
+}
+
+.navbtn:hover{
+    background-color: #ffffff;
+    color: #000000 !important;
+}
+
+.nav-item:hover{
+    text-shadow: 1px 0 1px 0 #ffffff !important;
+}
 .back{
   background-color: rgb(0, 0, 0, 0.2) ;
   padding: 0.2em;
